@@ -6,6 +6,6 @@ after download project from my github, first install both frontend and backend "
 
 ## for backend "npm run server"
 
-in backend folder create .env file and insert 
+in backend folder create .env file and insert your Postgresql Database and jwt token secret
 
 website url is:   https://blog-website-pern.vercel.app/
