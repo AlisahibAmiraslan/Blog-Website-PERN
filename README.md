@@ -6,4 +6,6 @@ after download project from my github, first install both frontend and backend "
 
 ## for backend "npm run server"
 
+in backend folder create .env file and insert 
+
 website url is:   https://blog-website-pern.vercel.app/
