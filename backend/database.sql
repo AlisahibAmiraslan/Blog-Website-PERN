@@ -1,0 +1,31 @@
+CREATE DATABASE blognodedb;
+
+CREATE TABLE users (
+	user_id serial PRIMARY KEY,
+	username VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	password VARCHAR ( 255 ) NOT NULL,
+	userrole VARCHAR ( 255 ) NOT NULL
+);
+
+CREATE TABLE blogs (
+	blog_id serial PRIMARY KEY,
+	title VARCHAR ( 1000 ) NOT NULL,
+	content TEXT NOT NULL,
+	category VARCHAR ( 255 ) NOT NULL,
+	created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE comments (
+	comment_id serial PRIMARY KEY,
+	user_id INTEGER NOT NULL,
+	blog_id INTEGER NOT NULL,
+	comment TEXT NOT NULL,
+	created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE categories (
+	category_id serial PRIMARY KEY,
+	category TEXT NOT NULL,
+	created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
