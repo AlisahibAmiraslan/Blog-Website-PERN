@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
@@ -34,7 +35,12 @@ const MyAccountComponent = () => {
         headers: { token },
       })
       .then((res) => setGetUser(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        if (err.response.status === 403) {
+          dispatch(logout());
+        }
+      });
   }, [user, token]);
 
   const handleChange = (e) => {
